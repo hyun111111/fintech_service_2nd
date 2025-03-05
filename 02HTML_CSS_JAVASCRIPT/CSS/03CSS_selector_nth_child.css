@@ -1,0 +1,65 @@
+p:first-of-type {
+    color:red;
+}
+
+/* p의 부모의 자식중 마지막에 등장하는 P의 요소 선택 */
+p:last-of-type {
+    color: blue;
+
+}
+
+
+/* p의 부모의 자식 중 앞에서 2번쨰에 등장하는 P요소 */
+
+P:nth-child(2) {
+    color: green;
+}
+
+p:nth-last-of-type(2){
+    color: orange;
+
+}
+
+
+/* 정합성 체크 셀렉터 입력받은 내용이 적합할 때 인증에 성공한 input요소 도는 form 요소를 선택*/
+
+/* :vaild, :invaild */
+
+input[type="text"]:valid {
+    background-color: greenyellow;
+}
+
+
+input[type="text"]:invalid {
+    background-color: red;
+}
+
+/* 가상 요소 셀렉터 */
+/* ::first-letter: 콘텐츠의 첫글자를 선택 */
+/* ::first-line: 콘텐츠의 첫줄을 선택, 블록 요소만 적용가능 */
+/* ::after: 콘텐츠의 앞에 위치하는 공간을 선택 */
+/* ::selection: 드래그한 콘텐츠를 선택 SAFARI 등에서는 작동 안함 */
+
+.beforeafter > p ::first-letter {
+    font-size: 3em;
+}
+
+.beforeafter > p ::first-line {
+    color: red;
+}
+/* h1요소의 콘텐츠 앞 공간에 content 속성의 값을 삽입 */
+.beforeafter > h1::before {
+    content: "HTML!|!";
+    color: blue;
+}
+
+.beforeafter > h1::after {
+    content: "HTML!|!";
+    color: red;
+}
+
+/* 그래그한 콘텐츠를 선택 크롬 엣지는 되고 사파리는 안됨 */
+.beforeafter > ::selection {
+    color: red;
+    background-color: yellow;
+}
