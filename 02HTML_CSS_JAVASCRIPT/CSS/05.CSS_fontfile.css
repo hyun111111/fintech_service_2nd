@@ -1,0 +1,186 @@
+/* 폰트 굵기 바꾸기 */
+/* font-weight */
+
+h1 {
+    font-weight: normal;
+}
+
+p > span {
+    font-weight: bold;
+}
+
+/*서버띄울때, alt +l+o */
+
+
+/* 폰트 크기 바꾸기 */
+/* font-size: px, em, rem */
+/*px: 1920*1080 */
+/* em: 부모요소를 기준으로 해서 자식요소의 크기가 바뀜 */
+/* rem: html 기본 문서 폰트 크기 (16px), 자식 요소들의 비율이 달라짐
+모바일 때문에 생김 스마트폰 크기가 다름, 화면크기와 해상도가 다름 */
+
+
+/* 뷰포트 지정, 화면대응 */
+
+/*px*/
+
+.font_size > article > h1 {
+    font-size: 60px;
+}
+
+.font_size > article > p {
+    font-size: 30px;
+}
+.font_size > article > a {
+    font-size: 15px;
+}
+
+/*em*/
+
+.font_size_em > article {
+    font-size: 20px;
+}
+
+.font_size_em > article > h1 {
+    font-size: 3em;
+}
+
+.font_size_em > article > p {
+    font-size: 1em;
+}
+.font_size_em > article > a {
+    font-size: 0.8em;
+}
+
+/*rem*/
+
+html {
+    font-size: 40px;
+}
+
+.font_size_rem > article > h1 {
+    font-size: 3rem;
+}
+
+.font_size_rem > article > p {
+    font-size: 1rem;
+}
+.font_size_rem > article > a {
+    font-size: 0.8rem;
+}
+
+/* alt+shift+방향키 아래 : 복사됨 */
+
+.font_type li {
+    font-size: 40px;
+}
+
+.font_type li:nth-of-type(1) {
+    font-family: "돋움";
+
+}
+
+.font_type li:nth-of-type(2) {
+    font-family: "굴림";
+
+}
+
+.font_type li:nth-of-type(3) {
+    font-family: helvetica;
+
+}
+
+.font_type li:nth-of-type(4) {
+    font-family: serif;
+
+}
+
+/* 구글폰트 사용하기 */
+.monoton-regular {
+    font-family: "Monoton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  /* 폰트 색상 변경하기 */
+  /* 색상명, 16진수, RGB, RGBA */
+
+ .font_color li:nth-child(1)  {
+    color: red;
+ }
+
+ .font_color li:nth-child(2)  {
+    color: #928a14;
+ }
+
+ .font_color li:nth-child(3)  {
+    color:rgb(0, 0, 225);
+ }
+
+ .font_color li:nth-child(4)  {
+    color: rgba(0,225,0, 0.5)
+ }
+
+ .font_color  {
+    background-color: rgba(0,0,0, 0.2)
+ }
+
+ /* 텍스트 줄간격 바뀌기 */
+
+ .line_height .text1 {
+    font-size: 20px;
+    line-height: 40px;
+    border: 1px solid red;
+ }
+
+ .line_height .text2 {
+    font-size: 20px;
+    line-height: 1.5;
+    border: 1px solid blue;
+ }
+
+ .line_height .text3 {
+    font-size: 20px;
+    line-height: 1.5;
+    border: 1px solid green;
+ }
+
+/* 정렬 */
+
+.align p {
+    border: 1px solid black;
+}
+.align p:nth-child(1) {
+    text-align: left;
+
+}
+
+.align p:nth-child(2) {
+    text-align: center;
+
+}
+
+
+.align p:nth-child(3) {
+    text-align: right;
+}
+
+.align p:nth-child(4) {
+    text-align: justify;
+}
+
+/* 자간 설정하기*/
+
+.letter_spacing p:nth-child(1) {
+    letter-spacing: 0px;
+}
+
+
+.letter_spacing p:nth-child(2) {
+    letter-spacing: 2px;
+}
+
+
+.letter_spacing p:nth-child(3) {
+    letter-spacing: -2px;
+}

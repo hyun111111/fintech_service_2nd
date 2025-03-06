@@ -1,3 +1,10 @@
+/* : first-of-type : 셀렉터에 해당하는 요소의 부모 요소의 자식 요소 중 첫번째 등장하는 요소를 선택 */
+/* :last-of-type : 셀렉터에 해당하는 요소의 부모 요소의 자식 요소 중 마지막 등장하는 요소를 선택 */
+/* :nth-of-type(n) : 셀렉터에 해당하는 요소의 부모 요소의 자식 요소 중 n번째 등장하는 요소를 선택, 
+자식요소가 2개이상인 경우 하나만 적용하고 싶을때 */
+/* :nth-LAST-of-type(n) : 셀렉터에 해당하는 요소의 부모 요소의 자식 요소 중 뒤에서 n번째 등장하는 요소를 선택 
+자식요소가 2개이상인 경우 하나만 적용하고 싶을때 */
+
 p:first-of-type {
     color:red;
 }
@@ -49,12 +56,12 @@ input[type="text"]:invalid {
 }
 /* h1요소의 콘텐츠 앞 공간에 content 속성의 값을 삽입 */
 .beforeafter > h1::before {
-    content: "HTML!|!";
+    content: "HTML!!!";
     color: blue;
 }
 
 .beforeafter > h1::after {
-    content: "HTML!|!";
+    content: "HTML!!!";
     color: red;
 }
 
