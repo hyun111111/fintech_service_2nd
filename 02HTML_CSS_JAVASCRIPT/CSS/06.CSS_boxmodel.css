@@ -176,3 +176,4 @@ div.line_type div:nth-child(4) {
     border: 10px double blue;
 }
 
+/* 마진겹침 , 오느 한쪽이 더 크면 어디의 마진은 묻혀버림 */

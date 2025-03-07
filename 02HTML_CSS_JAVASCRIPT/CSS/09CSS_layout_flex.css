@@ -1,0 +1,78 @@
+/* 플렉스박스 레이아웃 flex box layout */
+/*1차원 방식(가로,세로)으로 레이아웃을 설계하는 방식 */
+/* 블록 요소를 자유롭게 정렬하기 위해서 만들어짐 */
+
+.flex-container {
+    width: 300px;
+    height: 200px;
+    background-color: gray;
+    border: 1px solid black;
+     /* float: left; */
+    display: flex;
+    /*요소의 방향 flex-direction */
+    /* flex-direction: row; 기본값 */
+    /*반대로도 가능,reverse
+    row쓰면 세로로 column 쓰면 가로로
+    헷갈릴 수 있음  */
+    /* 제한된 영역을 넘었을 떄 줄바꿈 :wrap 
+    리버스 가능 */
+    flex-wrap: wrap;
+
+    /* flex-flow : direction +wrap */
+    /* flex-flow: column wrap; */
+
+    /* 가로방향(x축) 아이템정렬 */
+    /* justify-content: flex-start; 기본값 */
+    /* justify-content: flex-end */
+    /* justify-content: center; */
+    /* justify-content: space-between; */
+    /* justify-content: space-around;  공평한 공간 */ 
+    /* justify-content: space-evenly; */
+
+    /* 세로방향(y축) 아이템정렬 */
+   /* align-items: stretch; 기본값,공간에 맞춰서 공간을 채움 */
+   /* align-items: center;  left,right,center 있음*/
+   /* align-items: baseline; */
+
+   /* align-content이  wrep되어 두줄 일때 */
+
+   /* align-content: flex-start; */
+   /* align-content: flex-end; */
+   /* align-content: center; */
+   /* align-content: first baseline;*/
+   /* align-content: last baseline; */
+
+   /*아이템을 각각 정렬 align-self */
+
+}
+
+
+.flex-item {
+    color:  rgb(219, 190, 176);
+    background-color: brown;
+    border: 1px solid rgb(160, 122, 104);
+}
+
+.flex-item:nth-child(2n) {
+    background-color: blue;
+}
+
+
+.flex-item:nth-child(1) {
+    align-self:  flex-start;
+}
+
+
+.flex-item:nth-child(2) {
+    align-self: flex-end;
+}
+
+
+.flex-item:nth-child(3) {
+    align-self: center;
+}
+
+
+.flex-item:nth-child(4) {
+    align-self: self-end;
+}

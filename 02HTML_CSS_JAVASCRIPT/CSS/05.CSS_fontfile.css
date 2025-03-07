@@ -135,13 +135,13 @@ html {
 
  .line_height .text2 {
     font-size: 20px;
-    line-height: 1.5;
+    line-height: 0.5;
     border: 1px solid blue;
  }
 
  .line_height .text3 {
     font-size: 20px;
-    line-height: 1.5;
+    line-height: 2.5;
     border: 1px solid green;
  }
 
