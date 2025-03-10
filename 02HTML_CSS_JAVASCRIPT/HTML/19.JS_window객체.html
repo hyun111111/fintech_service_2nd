@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="../CSs/12.JS.css">
+  <title>자바스크립트 기초</title>
+
+ <!-- defer가 나오면 순서대로 다 확인하고 다음에 스크립트를 실행한다는 뜻 -->
+  <style>
+    body {
+        width: 50000px;
+        height: 50000px;
+    }
+    div {
+        position: fixed;
+        top: 10px;
+        left: 10px; 
+    }
+  </style>
+  </head>
+<body>
+    <!-- <button onclick="popup()">팝업</button> -->
+    <!-- <button onclick="printInfo()">window 객체속성</button> -->
+    <div>
+    <button onclick="sTo()">scrollTo(100,200)</button>
+     <button onclick="sBy()">scrollBy(100,200)</button>
+    </div> 
+
+    <script>
+        // function popup(){
+        //     window.open('popup.html','팝업','width=200, height=100');
+        // };
+        // function printInfo(){
+        //     console.log(`웹 브라우저의 너비: ${window.innerWidth}`);
+        //     console.log(`웹 브라우저의 높이: ${wimndow.innerHeight}`);
+        //     console.log(`웹브라우저의 창의 넓이: ${window.outerWidth}`);
+        //     console.log(`웹 브라우저 창의 높이: ${window.outerHeight}`);
+        //     console.log(`웹브라우저 창의 스크롤 위치: ${window.scrollX}`);
+        //     console.log(`웹브라우저 창의 스크롤 위치: ${window.scrollY}`);
+        // };
+        function sTo() {
+            window.scrollTo(100,200);
+
+        }
+        function sBy() {
+            window.scrollBy(100,200);
+            
+        }
+    </script>
+</body>
+</html>

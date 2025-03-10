@@ -1,0 +1,230 @@
+/*행(row)
+그리드에서 레이이아웃에서 가로줄을 의미 */
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+}
+
+.attribute {
+    border: 1px solid black;
+    width: max-content;
+    flex: 1; /*배율 지정 배수 */
+    padding: 5px;
+    background-color: gray;
+    color: white;
+}
+
+.explain {
+    border: 1px solid black;
+    flex: 3; /*배율 지정 배수 */
+    padding: 5px;
+}
+
+/*그리드 */
+/* grid-templete-columns: 크기, 크기, 크기... 무한대 가능 
+grid-template-rows : 크기,크기, 크기 */
+
+/*열(COLUMN)
+그리드에서 레이이아웃에서 세로줄을 의미 */
+.grid-container {
+    display: grid;
+    border: 1px solid black;
+    /* grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px; */
+
+    /* repeat(개수,크기) 크기가 같은 박스 여럿 생성 */
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px); 
+
+    /* minmax로 최소 최대 크기 지정하기 */
+    /* grid-template-columns: minmax(10px, 100px) 100px;
+    grid-template-rows: minmax(10px, 50px) 50px; */
+
+    /* 그리드 갭 주기
+    그리드 갭(grid-gab)
+그리드 셀과 그리드 셀 사이의 간격*/
+row-gap: 10px;
+column-gap: 10px;
+
+/* 그리드 정렬하기 aline-items, aline-self */
+/* stretch : 그리드 아이템이 그리드 셀을 꽉 채워주는 역할 */
+/* align-items: stretch; */
+
+/*start : 아이템을 그리드 셀 맨 위에 배치
+내용에 맞춰서 셀이 줄어듦 */
+/* align-items:  start; */
+
+/* center: 아이템을 세로 중간에 배치 */
+/* 셀이 줄어들면서 중앙 */
+/* align-items: center; */
+
+/* center: 아이템을 세로 아래에 배치 */
+/* 셀이 줄어들면서 끝 */
+/* align-items: end; */
+
+/* 그리드 가로 정렬하기 justify-items, justify-self*/
+/* stretch: 옆으로 꽉차게 늘림 */
+/* justify-items: stretch; */
+
+/*start  */
+/* justify-items: center; */
+
+/*center  */
+/* justify-items: center; */
+
+/*end  */
+/* justify-items: end; */
+
+/* 가로 세로 정렬을 동시에 place-items, place-self*/
+/* place-items: 세로 정렬 가로 정렬; */
+/* place-items: end start; */
+
+}
+
+.grid-item {
+    border: 1px solid red;
+    color: white;
+    background-color: red;
+}
+
+.grid-item:nth-child(2n) {
+    background-color: rgb(255, 0, 0,0.3);
+}
+.grid-item:nth-child(1) {
+    align-self: center;
+}
+
+
+.grid-item:nth-child(2) {
+    align-self: start;
+}
+
+
+.grid-item:nth-child(3) {
+    align-self: end;
+}
+
+
+.grid-item:nth-child(4) {
+    justify-self: start;
+}
+
+
+.grid-item:nth-child(5) {
+    justify-self: center;
+}
+
+
+.grid-item:nth-child(6) {
+    justify-self: end;
+}
+
+
+.grid-item:nth-child(7) {
+    place-self: start end;
+}
+
+
+.grid-item:nth-child(8) {
+    place-self: end start;
+}
+
+
+.grid-item:nth-child(9) {
+    place-self: center center;
+}
+
+
+/*그리드 셀(grid-cell)
+행과 열이 만나 이루어지는 하나의 공간 */
+/* 그리드 갭(grid-gab)
+그리드 셀과 그리드 셀 사이의 간격
+그리드아이템(grid-item)
+그리드 셀 안에서 표현되는 컨텐츠
+그리드 라인(grid-line)
+그리드 행과 열을 그리는 선
+그리드 넘버(grid-number
+그리드 라인에 붙는 번호
+그리드 컨테이너(grid-container)
+그리드 레이아웃의 전체 내용을 담고 있는 최상위 부모요소*/
+
+/* 그리드 속성을 이용해 위치 지정하기 */
+.grid-container2 {
+    display: grid;
+    border: 1px solid black;
+
+    grid-template-areas: 
+    "header header header"
+    "sidebar content content"
+    "footer footer footer"
+    ;
+}
+
+.grid-item2 {
+    color: white;
+    background-color: red;
+}
+
+/* 그리드 영역 속성을 지정*/
+.header {
+    grid-area: header;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.content {
+    grid-area: content;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/* 그리드 넘버를 이용해서 위치 지정하기 */
+.grid-container3 {
+    display: grid;
+    border: 1px solid black;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: repeat(3, 100px);
+    row-gap: 2px;
+    column-gap: 2px;
+
+}
+
+.grid-item3 {
+    color: white;
+    background-color: red;
+}
+
+.grid-item3:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.grid-item3:nth-child(2) {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.grid-item3:nth-child(3) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.grid-item3:nth-child(4) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}

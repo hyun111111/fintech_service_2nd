@@ -44,7 +44,10 @@ x,y 정할 수 있음 */
 
 /* 콘텐츠 모양을 자유롭게 변형하기 2 */
 /* 원근감을 만들어주는 태크 perspective
-낮을수록 과장된 원근감 */
+낮을수록 과장된 원근감
+100px 과장된 원근감
+400 적당
+1000 거의 없음  */
 
 .transform2 section {
 perspective: 400px;
@@ -105,7 +108,7 @@ perspective: 400px;
 /* transition의 속성으로 요소 변화시키기*/
 
 .container .bar {
-    width: 10;
+    width: 10px;
     border: 1px solid black;
     margin-bottom: 10px;
     background-color: gray;
