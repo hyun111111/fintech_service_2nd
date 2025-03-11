@@ -37,6 +37,7 @@ for(let el of list){
     el.addEventListener("click", e=>{
         e.preventDefault(); // 링크는 작동하지 않고
         console.log(e.currentTarget.innerText);
+        //innnertext 사용하면 출력 가능
     });
 }
 
