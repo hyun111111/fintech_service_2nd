@@ -149,11 +149,11 @@ main section article .inner figure {
     background-color: #777;
     overflow: hidden;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
-    /* filter로 영상에 채도 낮춤 */
     filter:  saturate(10%);
     transform-origin: left center;
     transition: 1s;
 }
+ /* filter로 영상에 채도 낮춤 */
 
 main section article .inner figure video {
     width: 100%;
@@ -196,10 +196,10 @@ main section article:hover .inner .txt h2::after {
 }
 
 /* 마우스 호버시 영상의 채도를 10%에서 120% 변경 */
-main section article .inner figure {
-    height: 24vh;
+main section article:hover .inner figure {
+    height: 25vh;
     filter: saturate(120%);
-    transform: translate(3vh);
+    transform: translateY(3vh);
 }
 
 /* cetio을 클릭했을 떄 넘어가는 화면 */
