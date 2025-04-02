@@ -78,20 +78,25 @@ on  s.department_id = d.department_id where s.department_id = 1;
 
 # 문제 10 x
 select * from course;
-select student_name, course_name 
-from student s left join student_course t
+select s.student_name, c.course_name 
+from student s join student_course t
 on  s.student_id = t.student_id
-inner join course c
+ join course c
 on  t.course_id = c.course_id
-where c.start_date LIKE "2016/11/@" ;
+where start_date LIKE "2016/11/%" ;
+DESC course; 
+
+
+SELECT COUNT(*) FROM course WHERE start_date LIKE '2016/11/%';
 
 # 문제 11 x
 select student_name
-from student s left join student_course t
+from student s join student_course t
 on  s.student_id = t.student_id
-left join course c
+join course c
 on  t.course_id = c.course_id
-where course_name = "데이터베이스 입문" ;
+where course_name = '데이터베이스 입문' ;
+
 
 # 문제 12 x 
 select count(student_name)
