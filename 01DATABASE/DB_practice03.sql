@@ -42,11 +42,12 @@ select student_id, student_name, heigth, s.department_id, department_name from s
 # 문제 2 
 select professor_id from professor where professor_name = "가교수";
 
-# 문제 3 x
+# 문제 3 x 오타가 있음
 select * from professor;
-select d.department_name, count(p.deparment_id) as '교수의 수' 
-from department d left join professor p 
-on  p.department_id = d.department_id group by d.department_name;
+select d.department_name, count(d.department_id) as '교수의 수' 
+from professor p  left join department d
+on  p.department_id = d.department_id group by d.department_name order by d.department_name asc;
+
 
 # 문제 4
 select * from student s left join department d 
@@ -71,35 +72,36 @@ from department d left join student s
 on  s.department_id = d.department_id group by department_name;
 
 # 문제 9 세모 
-select * from student;
+select department_id from student where student_name="다길동";
 select student_name
 from student s left join department d
-on  s.department_id = d.department_id where s.department_id = 1;
+on  s.department_id = d.department_id 
+where s.department_id = (select department_id from student where student_name="다길동");
 
 # 문제 10 x
 select * from course;
 select s.student_name, c.course_name 
-from student s join student_course t
+from student s left join student_course t
 on  s.student_id = t.student_id
- join course c
+left join course c
 on  t.course_id = c.course_id
 where start_date LIKE "2016/11/%" ;
 DESC course; 
 
 
-SELECT COUNT(*) FROM course WHERE start_date LIKE '2016/11/%';
+SELECT * FROM course WHERE start_date LIKE '2016/11/%';
 
 # 문제 11 x
 select student_name
-from student s join student_course t
+from student s left join student_course t
 on  s.student_id = t.student_id
-join course c
+left join course c
 on  t.course_id = c.course_id
 where course_name = '데이터베이스 입문' ;
 
 
 # 문제 12 x 
-select count(student_name)
+select count(*)
 from student s left join student_course t
 on  s.student_id = t.student_id
 left join course c
@@ -107,3 +109,12 @@ on  t.course_id = c.course_id
 left join professor p
 on  c.professor_id =  p.professor_id
 where p.professor_name = "빌게이츠" ;
+
+select count(*)
+from student s left join student_course t
+on  s.student_id = t.student_id
+where course_id=( select course_id from professor p
+left join course c
+on  c.professor_id =  p.professor_id
+where p.professor_name = "빌게이츠") ;
+

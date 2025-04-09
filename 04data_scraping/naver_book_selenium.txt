@@ -1,0 +1,42 @@
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+options = Options()
+options.add_experimental_option("detach", True)
+options.add_argument("start-maximized")
+options.add_argument("Chrome/135.0.0.0")
+options.add_argument("lang=ko_KR")
+
+driver = webdriver.Chrome(
+    service=Service(ChromeDriverManager().install()),
+    options=options
+    )
+url = "https://search.shopping.naver.com/book/home"
+driver.get(url)
+wait = WebDriverWait(driver, 10)
+search_text_box = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "._searchInput_search_text_83jy9._searchInput_placeholder_AG5yA._nlog_click")))
+search_text_box.send_keys("파이썬")
+search_text_box.send_keys(Keys.ENTER)
+
+# 책 제목  bookListItem_title__1mWGq
+title = driver.find_element(By.CSS_SELECTOR, ".bookListItem_title__1mWGq").text
+#세부링크 bookListItem_item_inner__edK7P
+detail_link = driver.find_element(By.CSS_SELECTOR, ".bookListItem_item_inner__edK7P > a").get_attribute("href")
+# 저자 .bookListItem_define_item__jqcW8.bookListItem_define_data__fu2A5
+author = driver.find_element(By.CSS_SELECTOR, ".bookListItem_define_item__jqcW8 > .bookListItem_define_data__fu2A5").text
+# 출판사 .bookListItem_define_item__jqcW8 bookListItem_publish__6XykH.bookListItem_define_data__fu2A5
+publisher = driver.find_element(By.CSS_SELECTOR, ".bookListItem_publish__6XykH .bookListItem_define_data__fu2A5").text
+# 출간일 .bookListItem_detail_date__6_wYJ
+pub_date = driver.find_element(By.CSS_SELECTOR, ".bookListItem_detail_date__6_wYJ").text
+# 평점 .bookListItem_grade__e60mi
+grade = float(driver.find_element(By.CSS_SELECTOR, ".bookListItem_grade__e60mi").text[2:5])
+# 가격 .bookPrice_price__Nv4Ee > em
+price = int(driver.find_element(By.CSS_SELECTOR, ".bookPrice_price__Nv4Ee > em").text.replace(",", ""))
+
+print(title, detail_link, author, publisher, pub_date, grade, price)
