@@ -1,0 +1,2 @@
+options.add_experimental_option("excludeSwitches", ["enable-logging"])  # DevTools 로그 제거
+options.add_argument("--log-level=3")  # ERROR만 출력 (0: ALL, 1: INFO, 2: WARNING, 3: ERROR)
