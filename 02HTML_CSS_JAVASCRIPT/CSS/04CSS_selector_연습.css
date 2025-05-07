@@ -52,7 +52,7 @@ aside > h2 {
     color: orange;
 }
 
-/*10	클래스 notice-list 두 번째 <li> 글자 크기를 20px로 설정하세요.*/
+/*10 클래스 notice-list 두 번째 <li> 글자 크기를 20px로 설정하세요.*/
 .notice-list li:nth-child(2) {
     font-size: 20px;
 }
