@@ -18,7 +18,6 @@ colorama==0.4.6
 comm==0.2.2
 contourpy==1.3.0
 cycler==0.12.1
-daal==2025.5.0
 debugpy==1.8.13
 decorator==5.2.1
 defusedxml==0.7.1
@@ -111,9 +110,6 @@ python-dateutil==2.9.0.post0
 python-dotenv==1.1.0
 python-json-logger==2.0.7
 pytz==2024.1
-pywin32==307
-pywin32-ctypes==0.2.3
-pywinpty==2.0.15
 PyYAML==6.0.2
 pyzmq==26.2.1
 referencing==0.36.2
@@ -122,7 +118,6 @@ rfc3339_validator==0.1.4
 rfc3986-validator==0.1.1
 rpds-py==0.23.1
 scikit-learn==1.6.1
-scikit-learn-intelex==2025.5.0
 scipy==1.13.1
 seaborn==0.13.2
 selenium==4.31.0
@@ -136,8 +131,6 @@ soupsieve==2.5
 SQLAlchemy==2.0.40
 stack_data==0.6.3
 statsmodels==0.14.4
-tbb==2022.1.0
-tcmlib==1.3.0
 terminado==0.18.1
 threadpoolctl==3.6.0
 tinycss2==1.4.0
