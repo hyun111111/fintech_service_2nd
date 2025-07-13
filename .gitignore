@@ -11,3 +11,5 @@ catanddog/
 *.joblib
 *.jpg
 *.png
+*.dta
+*.parquet
